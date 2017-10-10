@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="MathMemory">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login</title>
+    </head>
+    <body ng-controller="LoginCtrl">
+        <form class="form-signin" name="signinForm" role="form">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3">
+            <button ng-disabled="!user.email || !user.password" type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
+        </form>
+    </body>
+</html>
