@@ -4,15 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>MathMemory</title>
-        <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
-        <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
-        <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
-        <script src="app.js"></script>
-        <script src="login/login.js"></script>
-        <script src="register/register.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+         <script src='firebase-connect.js'></script>
     </head>
     <body>
         <div ng-view></div>
+        
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="app.js"></script>
+        <script src="login/login.js"></script>
+        <script src="components/version/version.js"></script>
+        <script src="components/version/version-directive.js"></script>
+        <script src="components/version/interpolate-filter.js"></script>
     </body>
 </html>
