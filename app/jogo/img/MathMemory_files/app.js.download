@@ -5,12 +5,7 @@ angular.module('MathMemory', [
     'ngRoute',
     'MathMemory.login',
     'MathMemory.principal',
-    'MathMemory.jogo',
-    'MathMemory.professor',
-    'ngCookies',
-    'MathMemory.acompanhamento',
-    'MathMemory.turmas',
-    'MathMemory.jogados'
+    'MathMemory.jogo'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/login'});

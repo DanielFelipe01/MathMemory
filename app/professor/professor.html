@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Daniel Felipe">
+        <link rel="shortcut icon" href="img/icon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="professor/professor.css" rel="stylesheet">
+    </head>
+    <body ng-app="mathmemory">
+        <div class="logo">
+            <img  src="professor/img/logo.png"/>
+        </div>   
+        <div class="conteudo" ng-controller="ProfessorCtrl">
+            <div id="perfil-form" method="post" role="form">
+                <div class="title"> Dados pessoais</div>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" tabindex="1" class="form-control" placeholder="Nome Completo" ng-model="user.nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" tabindex="2" class="form-control" placeholder="Email" ng-model="user.email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" tabindex="3" class="form-control" placeholder="Senha" ng-model="user.password">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" id="cpf" tabindex="4" class="form-control" placeholder="CPF" ng-model="user.cpf" >
+                </div>
+                <div class="form-group">
+                    <label for="data">Data Nascimento:</label>
+                    <input type="text" name="dataNascimento" id="dataNascimento" tabindex="5" class="form-control" placeholder="Data de nascimento" ng-model="user.nascimento">
+                </div>
+                
+                <div class="title"> Escola</div>
+                <div class="form-group">
+                    <label for="nomeFantasia">Nome da escola</label>
+                    <input type="text" name="nomeEscola" id="nomeEscola" tabindex="6" class="form-control" placeholder="Nome escola" ng-model="escola.nome">
+                </div>
+                <div class="title"> Endereço escola</div>
+                <div class="form-group">
+                    <label for="logadouro">Logadouro:</label>
+                    <input type="text" name="logadouro" id="logadouro" tabindex="7" class="form-control" placeholder="Rua" ng-model="escola.rua">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" name="bairro" id="bairro" tabindex="8" class="form-control" placeholder="Bairro" ng-model="escola.bairro">
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" name="cidade" id="cidade" tabindex="9" class="form-control" placeholder="Cidade" ng-model="escola.cidade">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" name="estado" id="estado" tabindex="10" class="form-control" placeholder="Estado" ng-model="escola.estado">
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" name="cep" id="cep" tabindex="11" class="form-control" placeholder="CEP" ng-model="escola.cep">
+                </div>
+
+                <!--<div class="title"> Turma</div>
+                <div class="form-group">
+                    <label for="nomeTurma">Nome da turma</label>
+                    <input type="text" name="nomeTurma" id="nomeTurma" tabindex="12" class="form-control" placeholder="Nome turma" ng-model="turma.nome">
+                </div>
+                <div class="title"> Alunos</div>
+                <div class="form-group">
+                    <label for="nomeAluno">Nome do aluno</label>
+                    <input type="text" name="nomeAluno" id="nomeAluno" tabindex="13" class="form-control" placeholder="Nome aluno" ng-model="aluno.nome">
+                </div>
+                <div class="form-group">
+                    <label for="emailAluno">Email:</label>
+                    <input type="email" name="emailAluno" id="emailAluno" tabindex="14" class="form-control" placeholder="Email aluno" ng-model="aluno.email">
+                </div>
+                <div class="form-group">
+                    <label for="ng-model="aluno.email"">Senha:</label>
+                    <input type="alunoPassword" name="ng-model="aluno.email"" id="ng-model="aluno.email"" tabindex="15" class="form-control" placeholder="Senha do aluno" ng-model="aluno.password">
+                </div>
+                <div class="form-group">
+                    <label for="data">Data Nascimento:</label>
+                    <input type="text" name="dataNascimentoAluno" id="dataNascimentoAluno" tabindex="16" class="form-control" placeholder="Data de nascimento" ng-model="aluno.nascimento">
+                </div>-->
+                
+                 <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                           <button id="login-submit"  tabindex="17" class="form-control btn btn-login" ng-click="Cadastrar($event)"> Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

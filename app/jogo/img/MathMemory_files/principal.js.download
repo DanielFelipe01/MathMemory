@@ -1,0 +1,42 @@
+'use strict';
+
+angular.module('MathMemory.principal', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/principal', {
+        templateUrl: 'principal/principal.html',
+        controller: 'PrincipalCtrl'
+    });
+}])
+
+.controller('PrincipalCtrl', ['$scope','$location','CommonProp',function($scope,$location,CommonProp) {
+    $scope.operacao = "";
+    $scope.nivel = "";
+    
+    
+    $scope.jogar = function() {
+        document.getElementById("telaJogar").style.display = "none";
+        document.getElementById("telaModoJogo").style.display = "block";
+    };
+    
+    $scope.modoJogo = function(modo) {
+        $scope.operacao = modo;
+        document.getElementById("telaModoJogo").style.display = "none";
+        document.getElementById("telaNivelJogo").style.display = "block";
+    };
+    
+    $scope.nivelJogo = function(nivel) {
+        $scope.nivel = nivel;
+        $location.path("/jogo");
+        $scope.$apply();
+    };
+    
+    $scope.iniciarLayout = function(){
+        document.getElementById("telaModoJogo").style.display = "none";
+        document.getElementById("telaNivelJogo").style.display = "none";
+    };
+    
+    $scope.iniciarLayout();
+}])
+
+

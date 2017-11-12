@@ -1,0 +1,50 @@
+'use strict';
+
+angular.module('MathMemory.jogo', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/jogo', {
+        templateUrl: 'jogo/jogo.html',
+        controller: 'JogoCtrl'
+    });
+}])
+
+.controller('JogoCtrl', ['$scope','$location','CommonProp',function($scope,$location,CommonProp) {
+    $scope.user = {};
+
+    $scope.idImages = new Array(4);
+    $scope.imageShow = new Array(4);
+    $scope.image = new Array(4);
+    $scope.pontos = 0;
+    $scope.image[1]="img/img14.png";
+    $scope.imageShow[1] = false;
+    
+    
+    
+    $scope.DefinirImagens = function(){
+        $scope.set = new Set();
+        for(var i =0;i<4;i++){   
+            do{
+                $scope.numero = $scope.getRandomSpan();
+            }while($scope.set.has($scope.numero));
+                $scope.set.add($scope.numero);
+                $scope.idImages[i] = $scope.numero;       
+        }
+        
+        
+    }
+    
+    $scope.getRandomSpan = function(){
+        return Math.floor((Math.random()*20)+1);
+    }
+    
+    $scope.ClickImg = function(id){
+        $scope.imageShow[id] = true;
+    }
+    
+   $scope.DefinirImagens();
+    
+    
+}])
+
+

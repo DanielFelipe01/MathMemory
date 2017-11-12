@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title> Entrar </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Daniel Felipe">
+        <link rel="shortcut icon" href="img/icon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="principal/principal.css" rel="stylesheet">
+    </head>
+    <body ng-app="mathmemory">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#!/principal">MathMemory</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/principal">Principal <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#!/jogados">Meus Jogos</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a ng-Click="Sair()">{{user.nome}}, Sair</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="conteudo"   ng-controller="PrincipalCtrl">
+            <div class="telaJogar" id="telaJogar">
+                <input type="button" class="btn-simples" id="btnJogar" value="Jogar"  ng-click="jogar()">
+            </div>
+            
+            <div class="telaModoJogo" id="telaModoJogo">
+                <h3> Selecione a operação </h3>
+                <div class="opeSoma" ng-click="modoJogo('+')">
+                    <div class="imgSoma"></div>
+                    <p class="textOpe">Soma</p>
+                </div>
+                <div class="opeSub" ng-click="modoJogo('-')">
+                    <div class="imgSub"></div>
+                    <p class="textOpe">Subtração</p>
+                </div>
+                <div class="opeDiv" ng-click="modoJogo('/')">
+                    <div class="imgDiv"></div>
+                    <p class="textOpe">Divisão</p>
+                </div>
+                <div class="opeMult" ng-click="modoJogo('*')">
+                    <div class="imgMult"></div>
+                    <p class="textOpe">Multiplicação</p>
+                </div>
+            </div>
+            
+            <div class="telaNivelJogo" id="telaNivelJogo" >
+                <h3> Selecione o nível </h3>
+                <div class="nivel" ng-click="nivelJogo('facil')">
+                    <p class="textOpe">Fácil</p>
+                    <img class="imgNivel" src="principal/img/1estrela.png"/>
+                </div>
+                <div class="nivel" ng-click="nivelJogo('medio')">
+                    <p class="textOpe">Médio</p>
+                    <img class="imgNivel" src="principal/img/2estrelas.png"/>
+                </div>
+                <div class="nivel" ng-click="nivelJogo('dificil')">
+                    <p class="textOpe">Dificíl</p>
+                    <img class="imgNivel" src="principal/img/3estrelas.png"/>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

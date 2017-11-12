@@ -1,0 +1,71 @@
+'use strict';
+
+angular.module('MathMemory.login', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/login', {
+        templateUrl: 'login/login.html',
+        controller: 'LoginCtrl'
+    });
+}])
+
+.controller('LoginCtrl', ['$scope','$location','CommonProp',function($scope,$location,CommonProp) {
+    $scope.user = {};
+    
+    
+    $scope.SignIn = function(e) {
+        e.preventDefault();
+        var email = $scope.user.email;
+        var password = $scope.user.password;
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+
+            console.log('User creation success');
+            $location.path("/principal");
+            $scope.$apply();
+        }, function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console(errorMessage);
+        });
+        
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+            
+            } else {
+            
+            }
+        });
+    }   
+
+    $scope.formRegister = function() {
+        document.getElementById("login-form").style.display = "none";
+         document.getElementById("register-form").style.display = "block";
+        angular.element(document.querySelector("#login-form-link")).removeClass("active");
+        angular.element(document.querySelector("#register-form-link")).addClass("active");
+    };
+
+    $scope.formLogin = function() {
+        document.getElementById("register-form").style.display = "none";
+        document.getElementById("login-form").style.display = "block";
+        angular.element(document.querySelector("#register-form-link")).removeClass("active");
+        angular.element(document.querySelector("#login-form-link")).addClass("active");
+    };
+    
+    $scope.formLogin();
+
+}])
+
+.service('CommonProp', function() {
+    var user = '';
+
+    return {
+        getUser: function() {
+            return user;
+        },
+        setUser: function(value) {
+            user = value;
+        }
+    };
+});
+

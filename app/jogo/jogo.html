@@ -1,0 +1,93 @@
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title> Entrar </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Daniel Felipe">
+        <link rel="shortcut icon" href="img/icon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="jogo/jogo.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#!/principal">MathMemory</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li ><a href="#!/principal">Principal <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#!/jogados">Meus Jogos</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a ng-Click="Sair()">{{user.nome}}, Sair</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+        <div class="conteudo" ng-app="mathmemory"  ng-controller="JogoCtrl">
+            
+            <div id="fundo" ng-show="contaShow"></div>
+            <div id="contas" ng-show="contaShow">
+                <article id="pergunta">
+                    <p>Quanto é </p> 
+                    <p>{{valor1}} {{operacao}} {{valor2}}</p>
+                </article>
+                <div class="conta" ng-click="Responde(0)"><p>{{results[0]}}</p></div>
+                <div class="conta" ng-click="Responde(1)"><p>{{results[1]}}</p></div>
+                <div class="conta" ng-click="Responde(2)"><p>{{results[2]}}</p></div>
+                <div class="conta" ng-click="Responde(3)"><p>{{results[3]}}</p></div>
+                <p id="resposta" ng-show="resultShow">{{resposta}}</p>
+                    
+            </div>
+            <div class="pontuacao">
+                <p> Pontos: {{pontos}} </p>
+            </div>
+            <div class="cartas">
+                <div class="carta" ng-click="ClickImg(0)">
+                    <div class="lock" ng-hide=imageShow[0]></div>
+                    <img class="image" ng-src="{{image[0]}}" ng-show="imageShow[0]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(1)">
+                    <div class="lock" ng-hide=imageShow[1]></div>
+                    <img class="image" ng-src="{{image[1]}}" ng-show="imageShow[1]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(2)">
+                    <div class="lock" ng-hide=imageShow[2]></div>
+                    <img class="image" ng-src="{{image[2]}}" ng-show="imageShow[2]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(3)">
+                    <div class="lock" ng-hide=imageShow[3]></div>
+                    <img class="image" ng-src="{{image[3]}}" ng-show="imageShow[3]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(4)">
+                    <div class="lock" ng-hide=imageShow[4]></div>
+                    <img class="image" ng-src="{{image[4]}}" ng-show="imageShow[4]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(5)">
+                    <div class="lock" ng-hide=imageShow[5]></div>
+                    <img class="image" ng-src="{{image[5]}}" ng-show="imageShow[5]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(6)">
+                    <div class="lock" ng-hide=imageShow[6]></div>
+                    <img class="image" ng-src="{{image[6]}}" ng-show="imageShow[6]"/>
+                </div>
+                <div class="carta" ng-click="ClickImg(7)">
+                    <div class="lock" ng-hide=imageShow[7]></div>
+                    <img class="image" ng-src="{{image[7]}}" ng-show="imageShow[7]"/>
+               </div>
+            </div>
+        </div>
+    </body>
+</html>
